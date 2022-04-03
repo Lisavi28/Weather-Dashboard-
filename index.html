@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--head  start-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">  <link rel="stylesheet" href="./assets/css/style.css"/>
+  <title>Weather Dashboard</title>
+</head>
+
+
+<!--body and header starts -->
+
+<body>
+
+ <header class="flex-column min-8-vh">
+
+        <div class="hero">
+          <h1 class="title">Weather Dashboard</h1>
+        </div>
+        </header>
+
+<!--main starts -->
+
+  <main class="flex-row justify-space-between">
+    <form class="col-12 col-md-4 search-btn">
+     
+        <h3 class="Search">Search for a city</h3>
+      
+          <input name="place" id="place" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn">Search</button>
+        </br>
+
+          <div class="search city"></div>
+
+    </form>
+   
+   <div class="col-12 col-md-8">
+    <div class="col-12">
+                <h3 class="card-header text-uppercase">Today's weather</h3>
+              <div class="card today">
+
+              </div>
+
+    <div id="subtitle">
+        <h3>5-days forecast</h3>
+    </div>
+    </div>
+
+    <div class="flex-row justify-space-between forecast">
+  
+       </div>
+      </div> 
+  </main>
+
+  <footer>
+    &copy;2022 Weather Dashboard <span ></span>
+ </footer>
+
+
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
