@@ -18,7 +18,7 @@ fetch(apiUrl)
     return response.json();
   })
 
-  //puts selected info in variables
+//puts selected info in variables
   .then(function(place) {
     var tempItem = place.current.temp;
     var windItem = place.current.wind_speed;
@@ -26,7 +26,7 @@ fetch(apiUrl)
     var uvItem= place.current.uvi;
     var weatherItem = place.current.weather[0].main;
 
-    //create elements in html
+//create elements in html
     var tempToday = document.createElement("h3");
     var windToday = document.createElement("h3");
     var humToday = document.createElement("h3");
@@ -34,7 +34,7 @@ fetch(apiUrl)
     var uvToday= document.createElement("h3");
     var cityToday = document.createElement("span");
 
-  //assign text value to html elements
+//assign text value to html elements
     tempToday.textContent =  "Temp: " + tempItem +" F";
     windToday.textContent = "Wind speed: " + windItem + "M/h";
     humToday.textContent = "Humidity: " + humItem;
@@ -45,12 +45,12 @@ fetch(apiUrl)
     todayCardEl.append(tempToday, windToday, humToday, uvToday, weatherToday)
     titleEl.append(cityToday)
 
-    //function call
+//function call
 
     weeklyCards(place);
   });
 }
-    // function to create daily cards
+// function to create daily cards
 
     var weeklyCards = function (place) {
    
@@ -75,7 +75,7 @@ fetch(apiUrl)
           windWeek.textContent = "Wind: " + cardWind + "Mi/h";
           humWeek.textContent = "Humidity: " + cardHum;
 
-    //add elements to container
+//add elements to container
 
         cardDiv.append(tempWeek,weatherWeek,windWeek,humWeek);
         weeklyCardEl.append(cardDiv);
@@ -89,14 +89,14 @@ var Submit = function(event) {
     var placeSelected = inputEl.value.trim();
     if (placeSelected){
 
-  //cleans screen 
+//cleans screen 
     todayCardEl.textContent =  "" ;
     titleEl.textContent = "" ;
     weeklyCardEl.textContent = "";
    geoLoc(placeSelected);
  
 
-  // button with recent search
+// button with recent search
    var searchBtn = document.createElement("button")
     searchBtn.classList.add('btn');
     searchBtn.textContent = placeSelected;
@@ -104,7 +104,20 @@ var Submit = function(event) {
     inputEl.value= "";    
     }
   }
- //function to convert city to coordinates
+
+  //
+$(".search").on("click", "button", function() {
+    // get current text of button element
+    var previousCity = $(this).text()
+   
+    geoLoc(previousCity);
+    todayCardEl.textContent =  "" ;
+    titleEl.textContent = "" ;
+    weeklyCardEl.textContent = "";
+  }
+  )
+
+//function to convert city to coordinates
 var geoLoc= function(placeSelected){
     var apiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + placeSelected + "&appid=e7ad4771f7fcd96ba684ae49e144fc60"
     fetch(apiUrl)
@@ -121,7 +134,7 @@ var geoLoc= function(placeSelected){
       weatherToday(place1, placeState, placeLat, placeLon)
     })
     }
-    
+
   searchbtnEl.addEventListener("submit", Submit);
 
 

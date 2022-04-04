@@ -27,11 +27,7 @@
   }
   
   /*style h...*/
-  h1,
-  h2,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h4, h5, h6 {
     font-weight: 700; /*grosor*/
     margin: 0;
     color: var(--dark);
@@ -66,7 +62,7 @@
     color: var(--primary);
     background-color: var(--tertiary);
     transform: translate(0, 0);
-    box-shadow: 2px 2px var(--dark);
+    box-shadow: 2px 2px #1744d8;
   }
 
   /* hero style*/
@@ -77,14 +73,12 @@
     background: linear-gradient(rgb(0, 38, 255), rgb(192, 227, 255));
     text-align: center;
   }
-  
-  
+    
   .title {
     font-size: 4rem;
     color: #ffffff;
     padding: 0px; 
     display: inline-block;
-   
   }
   
   .list-group {
@@ -92,7 +86,6 @@
     list-style: none;
   }
   
-
 /*cards*/ 
 
   .card {
@@ -122,7 +115,7 @@
     flex-direction: row;
   }
 
-  footer{
+   footer{
     padding: 20px;
     display: flex;
     align-items: center;
@@ -133,22 +126,6 @@
     justify-content: center;
     margin-top: auto;
   }
-
-  
-  /* HEIGHT / WIDTH UTILS */
-  .min-100-vh {
-    min-height: 100vh;
-  }
-  
-  .min-100-vw {
-    min-width: 100vw;
-  }
-  
-  /* FONT UTILS */
-  .text-uppercase {
-    text-transform: uppercase;
-  }
-  
   
   /* FLEX CONTENT */
   .flex-row {
