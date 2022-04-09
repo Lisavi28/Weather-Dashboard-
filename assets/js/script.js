@@ -119,7 +119,7 @@ $(".search").on("click", "button", function() {
 
 //function to convert city to coordinates
 var geoLoc= function(placeSelected){
-    var apiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + placeSelected + "&appid=e7ad4771f7fcd96ba684ae49e144fc60"
+    var apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + placeSelected + "&appid=e7ad4771f7fcd96ba684ae49e144fc60"
     fetch(apiUrl)
 
     .then(function (response) {
